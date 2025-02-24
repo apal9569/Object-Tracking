@@ -20,12 +20,13 @@ flags.DEFINE_integer("blur_id", None, "Class ID to apply Gaussian Blur")
 flags.DEFINE_integer("class_id", None, "Class ID to track")
 
 FLAGS = flags.FLAGS
-zed = sl.Camera()
-init_params = sl.InitParameters()
-init_params.camera_resolution = sl.RESOLUTION.HD1080  
-init_params.camera_fps = 30  
 
-zed.open(init_params)
+if FLAGS.video.isdigit():
+    zed = sl.Camera()
+    init_params = sl.InitParameters()
+    init_params.camera_resolution = sl.RESOLUTION.HD1080  
+    init_params.camera_fps = 30  
+    zed.open(init_params)
 
 def initialize_video_capture(video_input):
     ZED_FLAG = False
