@@ -163,7 +163,6 @@ def main(_argv):
         frame_count += 1
         
         fps_text = f"FPS: {1 / (end - start).total_seconds():.2f}"
-        cv2.putText(frame, fps_text, (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 2, (0, 0, 255), 8)
         
         writer.write(frame)
         cv2.imshow("YOLOv10 Object tracking", frame)
@@ -178,6 +177,9 @@ def main(_argv):
     cap.release()
     writer.release()
     cv2.destroyAllWindows()
+    
+    if ZED_FLAG:
+        zed.close()
 
 if __name__ == "__main__":
     try:
