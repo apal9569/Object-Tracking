@@ -11,7 +11,7 @@ https://www.stereolabs.com/docs/app-development/python/install
 ## Installation
 1. Clone this repository:
   ```
-   git clone https://github.com/sujanshresstha/Object-Tracking.git
+   git clone https://github.com/apal9569/Object-Tracking.git
    cd Object-Tracking
   ```
 2. Create new environment
